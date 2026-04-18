@@ -29,14 +29,12 @@ const SurahSettingsContext = createContext<
 >(undefined);
 
 export function SurahSettingsProvider({ children }: { children: ReactNode }) {
-  // Use default values initially
   const [arabicFontSize, setArabicFontSize] = useState(40);
   const [translationFontSize, setTranslationFontSize] = useState(21);
   const [activeFont, setActiveFont] = useState(
     fontOptions?.[0]?.name || "NooreHuda",
   );
 
-  // Load from localStorage on mount
   useEffect(() => {
     const savedArabic = localStorage.getItem("quran_arabicFontSize");
     const savedTranslation = localStorage.getItem("quran_translationFontSize");
@@ -57,7 +55,6 @@ export function SurahSettingsProvider({ children }: { children: ReactNode }) {
     if (savedFont) setActiveFont(savedFont);
   }, []);
 
-  // Save to localStorage whenever values change
   useEffect(() => {
     localStorage.setItem("quran_arabicFontSize", arabicFontSize.toString());
   }, [arabicFontSize]);

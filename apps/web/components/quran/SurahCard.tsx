@@ -32,10 +32,7 @@ export function SurahCard({ surah }: SurahCardProps) {
           />
           <span
             className={cn(
-              "relative z-10 text-[12px] font-bold transition-colors duration-300",
-              surah.number === 3
-                ? "text-white"
-                : "text-[#9CA3AF] group-hover:text-white",
+              "relative z-10 text-[12px] font-bold transition-colors duration-300 text-[#9CA3AF] group-hover:text-white",
             )}
           >
             {surah.number}

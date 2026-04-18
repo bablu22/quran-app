@@ -2,7 +2,7 @@
 
 import { Search } from "lucide-react";
 import { useState } from "react";
-import { SearchDialog } from "./quran/SearchDialog";
+import { SearchDialog } from "./search-dialog/SearchDialog";
 
 const QUICK_LINKS = ["Al Mulk", "Yasin", "Al Kahf", "Al Ikhlas"];
 
@@ -16,14 +16,11 @@ export function HeroSection() {
     >
       <SearchDialog open={searchOpen} onOpenChange={setSearchOpen} />
 
-      {/* ── Content ── */}
       <div className="relative z-10 mx-auto flex flex-1 flex-col items-center justify-center px-4 -mt-10">
-        {/* Title */}
         <h1 className="mb-6 text-center text-4xl font-semibold tracking-tight text-[#343634] md:text-6xl">
           QURAN &nbsp;MAZID
         </h1>
 
-        {/* Search Bar */}
         <button
           className="relative mb-4 w-full max-w-[510px] cursor-pointer text-left focus:outline-none"
           onClick={(e) => {
@@ -44,7 +41,6 @@ export function HeroSection() {
           </kbd>
         </button>
 
-        {/* Quick Links */}
         <div className="mb-10 flex flex-wrap items-center justify-center gap-3">
           {QUICK_LINKS.map((surah) => (
             <button
@@ -56,7 +52,6 @@ export function HeroSection() {
           ))}
         </div>
 
-        {/* Verse */}
         <div className="mb-12 max-w-[600px] text-center">
           <p className="text-[24px] leading-tight text-[#6f8377] font-sans md:text-[32px]">
             And worship your Lord until there comes to you the certainty
@@ -71,7 +66,6 @@ export function HeroSection() {
         </div>
       </div>
 
-      {/* Skyline Image */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-[100px] md:h-[160px] lg:h-[200px]"
