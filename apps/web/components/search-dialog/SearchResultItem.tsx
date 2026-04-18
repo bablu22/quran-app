@@ -2,8 +2,13 @@
 
 import { memo, useCallback } from "react";
 
-import type { SearchResult } from "./types";
-
+interface SearchResult {
+  surah_number: number;
+  verse_number: number;
+  surah_name: string;
+  text_en: string;
+  revelation_place: string;
+}
 interface SearchResultItemProps {
   result: SearchResult;
   onClick: (result: SearchResult) => void;
